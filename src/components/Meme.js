@@ -17,7 +17,13 @@ export default function Meme() {
       randomImage: memesArray[randomNumber].url
     }));
   }
-
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setMemeImage((prevMeme) => ({
+      ...prevMeme,
+      [name]: value
+    }));
+  }
   return (
     <main>
       <div className="form">
